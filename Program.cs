@@ -424,6 +424,37 @@
 // 19. count lowercase and uppercase
 // input = &quot;Hello world!&quot;
 // output = uppercase = 1, lowercase = 9
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            string str = "Hello World";
+//            int uppercase = 0;
+//            int lowercase = 0;
+//            foreach (char i in str)
+//            {
+//                if (char.IsUpper(i))
+//                {
+//                    uppercase++;
+//                }
+//                else
+//                {
+//                    lowercase++;
+//                }
+//            }
+//            Console.WriteLine($"Uppercase Count : {uppercase} & Lowercase Count : {lowercase}");
+//        }
+//    }
+//}
+
+// 14. [80, 60, 10, 50, 30, 100, 0, 50]
+// Find pairs whose sum = 100;
+// Logic for above problem?
+// What will be the complexity for it?
+// Any better solution for the above problem
 using System;
 namespace logicals
 {
@@ -431,21 +462,18 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            string str = "Hello World";
-            int uppercase = 0;
-            int lowercase = 0;
-            foreach (char i in str)
+            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
+            int targetSum = 100;
+            for (int i = 0; i < array.Length; i++)
             {
-                if (char.IsUpper(i))
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    uppercase++;
-                }
-                else
-                {
-                    lowercase++;
+                    if (array[i] + array[j] == targetSum)
+                    {
+                        Console.WriteLine(array[i] + " : " + array[j]);
+                    }
                 }
             }
-            Console.WriteLine($"Uppercase Count : {uppercase} & Lowercase Count : {lowercase}");
         }
     }
 }
