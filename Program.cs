@@ -288,35 +288,57 @@
 
 
 // 8. WAP to print Fibonacci series without recursion.
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the element to get the fibonacci series : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            int a = 0;
+//            int b = 1;
+//            int c = 0;
+
+
+//if (n >= 1)
+//{
+//    Console.Write(a + " "); // Print the first Fibonacci number (0)
+//}
+//if (n >= 2)
+//{
+//    Console.Write(b + " "); // Print the second Fibonacci number (1)
+//}
+//for (int i = 2; i < n; i++)
+//{
+//    c = a + b;
+//    Console.Write(c + " ");
+
+//                a = b;
+//                b = c;
+//            }
+//        }
+//    }
+//}
+
+
+// 10. Code to find even numbers in a list
 using System;
+using System.Collections.Generic;
 namespace logicals
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter the element to get the fibonacci series : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int a = 0;
-            int b = 1;
-            int c = 0;
-
-
-            if (n >= 1)
+            var list = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            foreach (var i in list)
             {
-                Console.Write(a + " "); // Print the first Fibonacci number (0)
-            }
-            if (n >= 2)
-            {
-                Console.Write(b + " "); // Print the second Fibonacci number (1)
-            }
-            for (int i = 2; i < n; i++)
-            {
-                c = a + b;
-                Console.Write(c + " ");
-
-                a = b;
-                b = c;
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
     }
