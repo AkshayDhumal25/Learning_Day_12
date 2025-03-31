@@ -554,6 +554,44 @@
 
 // Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
 // Output: arr[] = [1, 2, 4, 3, 5, 0, 0, 0]
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 1, 2, 0, 4, 3, 0, 5, 0 };
+//            int left = 0;
+//            int right = array.Length - 1;
+//            while (left < right)
+//            {
+//                if (array[left] == 0 && array[right] != 0)
+//                {
+//                    int temp = array[left];
+//                    array[left] = array[right];
+//                    array[right] = temp;
+//                    left++;
+//                    right--;
+//                }
+//                if (array[left] != 0)
+//                {
+//                    left++;
+//                }
+//                if (array[right] == 0)
+//                {
+//                    right--;
+//                }
+//            }
+//            foreach (var i in array)
+//            {
+//                Console.WriteLine(i);
+//            }
+//        }
+//    }
+//}
+
+// Fibonacci series
 using System;
 namespace logicals
 {
@@ -561,31 +599,18 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            int[] array = { 1, 2, 0, 4, 3, 0, 5, 0 };
-            int left = 0;
-            int right = array.Length - 1;
-            while (left < right)
+            Console.WriteLine("Enter the number : ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            int a = 0;
+            int b = 1;
+            int c = 0;
+            Console.Write($"{a} {b} ");
+            for (int i = 3; i <= n; i++)
             {
-                if (array[left] == 0 && array[right] != 0)
-                {
-                    int temp = array[left];
-                    array[left] = array[right];
-                    array[right] = temp;
-                    left++;
-                    right--;
-                }
-                if (array[left] != 0)
-                {
-                    left++;
-                }
-                if (array[right] == 0)
-                {
-                    right--;
-                }
-            }
-            foreach (var i in array)
-            {
-                Console.WriteLine(i);
+                c = a + b;
+                Console.Write(c + " ");
+                a = b;
+                b = c;
             }
         }
     }
