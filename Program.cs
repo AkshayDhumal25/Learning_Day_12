@@ -616,61 +616,88 @@
 //    }
 //}
 
-using System.Diagnostics;
-namespace DataStructures
+//using System.Diagnostics;
+//namespace DataStructures
+//{
+//    class Program
+//    {
+//        class LinkedListNode
+//        {
+//            public int data;
+//            public LinkedListNode next;
+
+//            public LinkedListNode(int x)
+//            {
+//                data = x;
+//                next = null;
+//            }
+//        }
+//        class LinkedList
+//        {
+//            int count;
+//            LinkedListNode head;
+//            public LinkedList()
+//            {
+//                head = null;
+//                count = 0;
+//            }
+//            public void AddNodeToFront(int data)
+//            {
+//                LinkedListNode node = new LinkedListNode(data);
+//                node.next = head;
+//                head = node;
+
+//                count++;
+//            }
+
+//            public void PrintList()
+//            {
+//                LinkedListNode runner = head;
+//                while(runner != null)
+//                {
+//                    Console.WriteLine(runner.data);
+//                    runner = runner.next;
+//                }
+//            }
+//        }
+//        static void Main(string[] args)
+//        {
+//            LinkedList l = new LinkedList(); 
+//            l.AddNodeToFront(1);
+//            l.AddNodeToFront(2);
+//            l.AddNodeToFront(3);
+//            l.AddNodeToFront(4);
+//            l.AddNodeToFront(5);
+
+//            l.PrintList();
+//        }
+//    }
+//}
+
+
+// 14. [80, 60, 10, 50, 30, 100, 0, 50]
+// Find pairs whose sum = 100;
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace logicals
 {
     class Program
     {
-        class LinkedListNode
+        public static void Main(string[] args)
         {
-            public int data;
-            public LinkedListNode next;
-
-            public LinkedListNode(int x)
+            int[] arr = { 80, 60, 10, 50, 30, 100, 0, 50 };
+            HashSet<int> seen = new HashSet<int>(arr);
+            foreach (var num in arr)
             {
-                data = x;
-                next = null;
-            }
-        }
-        class LinkedList
-        {
-            int count;
-            LinkedListNode head;
-            public LinkedList()
-            {
-                head = null;
-                count = 0;
-            }
-            public void AddNodeToFront(int data)
-            {
-                LinkedListNode node = new LinkedListNode(data);
-                node.next = head;
-                head = node;
-
-                count++;
-            }
-
-            public void PrintList()
-            {
-                LinkedListNode runner = head;
-                while(runner != null)
+                int complement = 100 - num;
+                if (seen.Contains(complement))
                 {
-                    Console.WriteLine(runner.data);
-                    runner = runner.next;
-                }
-            }
-        }
-        static void Main(string[] args)
-        {
-            LinkedList l = new LinkedList(); 
-            l.AddNodeToFront(1);
-            l.AddNodeToFront(2);
-            l.AddNodeToFront(3);
-            l.AddNodeToFront(4);
-            l.AddNodeToFront(5);
+                    Console.WriteLine($"{num} : {complement}");
 
-            l.PrintList();
+                }
+
+            }
         }
     }
 }
-
