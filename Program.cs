@@ -479,15 +479,48 @@
 //}
 
 //lambda function
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Func<int, int> square = x => x * x;
+//            Console.WriteLine(square(5));
+//        }
+//    }
+//}
+
+
+//Encapsulation
 using System;
-namespace logicals
+namespace encapsulation
 {
+    class rectangleArea
+    {
+        public double length;
+        public double width;
+
+        public double getArea()
+        {
+            return length * width;
+        }
+
+        public void print()
+        {
+            Console.WriteLine($"Length : {length} and Width : {width}");
+            Console.WriteLine("Area : " + getArea());
+        }
+    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Func<int, int> square = x => x * x;
-            Console.WriteLine(square(5));
+            rectangleArea r = new rectangleArea();
+            r.length = 9.0;
+            r.width = 9.0;
+            r.print();
         }
     }
 }
