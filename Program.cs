@@ -382,17 +382,41 @@
 //}
 
 // ]12. WAP for getting a square root of a given number.
-using System;
-namespace logicals
-{
-    class Program
-    {
-        public static void Main(string[] str)
-        {
-            Console.WriteLine("Enter the number to get the sqrt : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            var res = Math.Sqrt(n);
-            Console.WriteLine(res);
-        }
-    }
-}
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] str)
+//        {
+//            Console.WriteLine("Enter the number to get the sqrt : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            var res = Math.Sqrt(n);
+//            Console.WriteLine(res);
+//        }
+//    }
+//}
+
+// 13. WAP with 2 different logic, to find all duplicate numbers in an array.
+// 2nd approach 
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 1, 2, 1, 1, 3, 4, 4, 5, 6, 7, 8, 9 };
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                for (int j = i + 1; j < array.Length; j++)
+//                {
+//                    if (array[i] == array[j])
+//                    {
+//                        Console.WriteLine(array[i] + " ");
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
