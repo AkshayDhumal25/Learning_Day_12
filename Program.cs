@@ -455,6 +455,30 @@
 // Logic for above problem?
 // What will be the complexity for it?
 // Any better solution for the above problem
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
+//            int targetSum = 100;
+//            for (int i = 0; i < array.Length; i++)
+//            {
+//                for (int j = i + 1; j < array.Length; j++)
+//                {
+//                    if (array[i] + array[j] == targetSum)
+//                    {
+//                        Console.WriteLine(array[i] + " : " + array[j]);
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+
+//lambda function
 using System;
 namespace logicals
 {
@@ -462,18 +486,8 @@ namespace logicals
     {
         public static void Main(string[] args)
         {
-            int[] array = { 80, 60, 10, 50, 30, 100, 0, 50 };
-            int targetSum = 100;
-            for (int i = 0; i < array.Length; i++)
-            {
-                for (int j = i + 1; j < array.Length; j++)
-                {
-                    if (array[i] + array[j] == targetSum)
-                    {
-                        Console.WriteLine(array[i] + " : " + array[j]);
-                    }
-                }
-            }
+            Func<int, int> square = x => x * x;
+            Console.WriteLine(square(5));
         }
     }
 }
