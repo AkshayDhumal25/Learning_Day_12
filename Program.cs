@@ -208,20 +208,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace logicals
-{
-    class Program
-    {
-        public static void Main(string[] args)
-        {
-            int[] array = { 1, 2, 3, 5, 6, 8, 7, 10 };
+namespace logicals{
+    class Program{
+        public static void Main(string[] args){
+            int[] array = {1,2,3,5,6,8,7,10};
             int min = array.Min();
             int max = array.Max();
-            var list = new List<int>(array);
-            for (int i = min; i <= max; i++)
-            {
-                if (!list.Contains(i))
-                {
+            var list =  new List<int>(array);
+            for(int i = min;i<=max;i++){
+                if( ! list.Contains(i)){
                     Console.WriteLine(i);
                 }
             }
