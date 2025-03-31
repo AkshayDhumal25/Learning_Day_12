@@ -205,21 +205,58 @@
 
 
 // 5. WAP to find missing elements from the array?
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//namespace logicals{
+//    class Program{
+//        public static void Main(string[] args){
+//            int[] array = {1,2,3,5,6,8,7,10};
+//            int min = array.Min();
+//            int max = array.Max();
+//            var list =  new List<int>(array);
+//            for(int i = min;i<=max;i++){
+//                if( ! list.Contains(i)){
+//                    Console.WriteLine(i);
+//                }
+//            }
+//        }
+//    }
+//}
+
+// 6. WAP to find the given string is Palindrome or not.
 using System;
-using System.Collections.Generic;
-using System.Linq;
-namespace logicals{
-    class Program{
-        public static void Main(string[] args){
-            int[] array = {1,2,3,5,6,8,7,10};
-            int min = array.Min();
-            int max = array.Max();
-            var list =  new List<int>(array);
-            for(int i = min;i<=max;i++){
-                if( ! list.Contains(i)){
-                    Console.WriteLine(i);
-                }
+namespace logicals
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string str = "abbaa";
+            if (isPalindrome(str))
+            {
+                Console.WriteLine("Palindrome");
             }
+            else
+            {
+                Console.WriteLine("Not Palindrome");
+            }
+        }
+        public static bool isPalindrome(string str)
+        {
+            int left = 0;
+            int right = str.Length - 1;
+
+            while (left < right)
+            {
+                if (str[left] != str[right])
+                {
+                    return false;
+                }
+                left++;
+                right--;
+            }
+            return true;
         }
     }
 }
