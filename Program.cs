@@ -527,26 +527,66 @@
 
 
 //Abstraction
+//using System;
+//namespace abstraction
+//{
+//    abstract class Person
+//    {
+//        public abstract void Print();
+//    }
+//    class Name : Person
+//    {
+//        public override void Print()
+//        {
+//            Console.WriteLine("Hello");
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Name n = new Name();
+//            n.Print();
+//        }
+//    }
+//}
+
+
+// Input: arr[] = [1, 2, 0, 4, 3, 0, 5, 0]
+// Output: arr[] = [1, 2, 4, 3, 5, 0, 0, 0]
 using System;
-namespace abstraction
+namespace logicals
 {
-    abstract class Person
-    {
-        public abstract void Print();
-    }
-    class Name : Person
-    {
-        public override void Print()
-        {
-            Console.WriteLine("Hello");
-        }
-    }
     class Program
     {
         public static void Main(string[] args)
         {
-            Name n = new Name();
-            n.Print();
+            int[] array = { 1, 2, 0, 4, 3, 0, 5, 0 };
+            int left = 0;
+            int right = array.Length - 1;
+            while (left < right)
+            {
+                if (array[left] == 0 && array[right] != 0)
+                {
+                    int temp = array[left];
+                    array[left] = array[right];
+                    array[right] = temp;
+                    left++;
+                    right--;
+                }
+                if (array[left] != 0)
+                {
+                    left++;
+                }
+                if (array[right] == 0)
+                {
+                    right--;
+                }
+            }
+            foreach (var i in array)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
