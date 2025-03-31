@@ -494,33 +494,59 @@
 
 
 //Encapsulation
+//using System;
+//namespace encapsulation
+//{
+//    class rectangleArea
+//    {
+//        public double length;
+//        public double width;
+
+//        public double getArea()
+//        {
+//            return length * width;
+//        }
+
+//        public void print()
+//        {
+//            Console.WriteLine($"Length : {length} and Width : {width}");
+//            Console.WriteLine("Area : " + getArea());
+//        }
+//    }
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            rectangleArea r = new rectangleArea();
+//            r.length = 9.0;
+//            r.width = 9.0;
+//            r.print();
+//        }
+//    }
+//}
+
+
+//Abstraction
 using System;
-namespace encapsulation
+namespace abstraction
 {
-    class rectangleArea
+    abstract class Person
     {
-        public double length;
-        public double width;
-
-        public double getArea()
+        public abstract void Print();
+    }
+    class Name : Person
+    {
+        public override void Print()
         {
-            return length * width;
-        }
-
-        public void print()
-        {
-            Console.WriteLine($"Length : {length} and Width : {width}");
-            Console.WriteLine("Area : " + getArea());
+            Console.WriteLine("Hello");
         }
     }
     class Program
     {
         public static void Main(string[] args)
         {
-            rectangleArea r = new rectangleArea();
-            r.length = 9.0;
-            r.width = 9.0;
-            r.print();
+            Name n = new Name();
+            n.Print();
         }
     }
 }
