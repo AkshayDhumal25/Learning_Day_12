@@ -592,26 +592,85 @@
 //}
 
 // Fibonacci series
-using System;
-namespace logicals
+//using System;
+//namespace logicals
+//{
+//    class Program
+//    {
+//        public static void Main(string[] args)
+//        {
+//            Console.WriteLine("Enter the number : ");
+//            int n = Convert.ToInt32(Console.ReadLine());
+//            int a = 0;
+//            int b = 1;
+//            int c = 0;
+//            Console.Write($"{a} {b} ");
+//            for (int i = 3; i <= n; i++)
+//            {
+//                c = a + b;
+//                Console.Write(c + " ");
+//                a = b;
+//                b = c;
+//            }
+//        }
+//    }
+//}
+
+using System.Diagnostics;
+namespace DataStructures
 {
     class Program
     {
-        public static void Main(string[] args)
+        class LinkedListNode
         {
-            Console.WriteLine("Enter the number : ");
-            int n = Convert.ToInt32(Console.ReadLine());
-            int a = 0;
-            int b = 1;
-            int c = 0;
-            Console.Write($"{a} {b} ");
-            for (int i = 3; i <= n; i++)
+            public int data;
+            public LinkedListNode next;
+
+            public LinkedListNode(int x)
             {
-                c = a + b;
-                Console.Write(c + " ");
-                a = b;
-                b = c;
+                data = x;
+                next = null;
             }
+        }
+        class LinkedList
+        {
+            int count;
+            LinkedListNode head;
+            public LinkedList()
+            {
+                head = null;
+                count = 0;
+            }
+            public void AddNodeToFront(int data)
+            {
+                LinkedListNode node = new LinkedListNode(data);
+                node.next = head;
+                head = node;
+
+                count++;
+            }
+
+            public void PrintList()
+            {
+                LinkedListNode runner = head;
+                while(runner != null)
+                {
+                    Console.WriteLine(runner.data);
+                    runner = runner.next;
+                }
+            }
+        }
+        static void Main(string[] args)
+        {
+            LinkedList l = new LinkedList(); 
+            l.AddNodeToFront(1);
+            l.AddNodeToFront(2);
+            l.AddNodeToFront(3);
+            l.AddNodeToFront(4);
+            l.AddNodeToFront(5);
+
+            l.PrintList();
         }
     }
 }
+
