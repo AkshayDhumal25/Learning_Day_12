@@ -420,3 +420,32 @@
 //        }
 //    }
 //}
+
+// 19. count lowercase and uppercase
+// input = &quot;Hello world!&quot;
+// output = uppercase = 1, lowercase = 9
+using System;
+namespace logicals
+{
+    class Program
+    {
+        public static void Main(string[] args)
+        {
+            string str = "Hello World";
+            int uppercase = 0;
+            int lowercase = 0;
+            foreach (char i in str)
+            {
+                if (char.IsUpper(i))
+                {
+                    uppercase++;
+                }
+                else
+                {
+                    lowercase++;
+                }
+            }
+            Console.WriteLine($"Uppercase Count : {uppercase} & Lowercase Count : {lowercase}");
+        }
+    }
+}
